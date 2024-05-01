@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - CodeLabs</title>
+    <style>
+        /* Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Ubuntu:wght@500&display=swap');
+
+        /* Internal CSS */
+        * {
+            color: #282828;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #959595;
+        }
+
+        ::-webkit-scrollbar-thumb { 
+            background-color: #d0c7d0;
+            border-radius: 6px;
+            border: 0;
+        }
+
+        .cmpname {
+            font-family: "Ubuntu", sans-serif;
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 36px;
+        }
+
+        body {
+            font-family: "Noto Sans", sans-serif;
+            background-color: #d8dcdf;
+            color: #fff; 
+            min-height: 100vh;
+            position: relative;
+        }
+
+        header {
+            background-color: #420e7c;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+        }   
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #FFF7F1;
+            font-weight: bold;
+            transition: top 0.5s ease-in-out;
+            padding: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #E26EE5;
+            color: #fff;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+
+        nav ul li a:hover {
+            color: #FFD1E3;
+            top: -3px;
+        }
+
+        nav ul li a:not(:hover) {
+            color: whitesmoke;
+            top: 0;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .motto-section,
+        .second-section {
+            display: flex;
+            background-color: whitesmoke;
+            flex-wrap: wrap;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .motto-content,
+        .second-content {
+            flex: 1;
+        }
+
+        .motto-content h2,
+        .second-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .motto-content p,
+        .second-content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .motto-image,
+        .second-image {
+            flex: 1;
+            margin: 10px;
+        }
+
+        .motto-image img,
+        .second-image img {
+            max-height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            background-color: #420e7c;
+            color: #FFF7F1 !important;
+            text-align: center;
+            padding: 20px;
+            position: static;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: 999;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .socials a {
+            margin: 20px;
+        }
+
+        .socials img {
+            width: 50px;
+            height: 50px; 
+        }
+
+        .feedback-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feedback-form {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .feedback-form h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .feedback-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback-form label {
+            margin-bottom: 8px;
+        }
+
+        .feedback-form input[type="text"],
+        .feedback-form input[type="email"],
+        .feedback-form textarea {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .feedback-form textarea {
+            resize: vertical;
+        }
+
+        .feedback-form button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #7E30E1;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .feedback-form button[type="submit"]:hover {
+            background-color: #420e7c;
+        }
+
+        .feedback-content {
+            flex: 1;
+            max-width: 400px;
+        }
+
+        .feedback-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .feedback-image img {
+            max-height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .beside-feedback {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .beside-feedback .bft {
+            flex: 1;
+            margin-right: 20px;
+            font-size: large;
+            max-width: 400px;
+        } 
+
+        .beside-feedback img {
+            flex: 1;
+            max-width: 400px;
+            margin-left: 20px;
+        }
+
+        .footp {
+            color: white;
+        }
+
+    
+        .hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+}
+@media only screen and (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar-container {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-container.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-list {       
+        list-style-type: none;
+        padding: 0;
+        margin: 10px 0 0 0;
+    }
+    
+
+    .navbar-list li {
+        margin-bottom: 10px;
+    }
+
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="cmpname">CodeLabs</a>
+            <button class="hamburger-menu">&#9776;</button>
+            <nav class="navbar-container">
+                <ul class="navbar-list">
+                    <li><a class="home" href="index.html">Home</a></li>
+                    <li><a class="courses" href="course.html">Courses</a></li>
+                    <li><a class="extras" href="#">Problems</a></li>
+                    <li><a class="about" href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="motto-section">
+            <div class="motto-content">
+                <h2>Our Motto</h2>
+                <p>We are deeply devoted to providing exceptional education that encompasses a broad spectrum of subjects. Our primary objective is to develop educational resources that are not only informative but also highly conducive to effective learning and retention. We strive to tailor our materials in such a way that they optimize the learning experience for individuals, taking into account their unique learning pace and preferences.
+
+                    Our unwavering passion for education fuels our commitment to assisting you in overcoming any challenges or uncertainties you may encounter. We are dedicated to offering top-tier educational content and support, utilizing our expertise to ensure that your learning journey is enriching, rewarding, and successful.</p>
+            </div>
+            <div class="motto-image">
+                <img src="motto1.png" alt="Motto Image" height="400px" width="auto">
+            </div>
+        </div>
+        
+        <div class="second-section">
+            <div class="second-image">
+                <img src="https://via.placeholder.com/400" alt="Second Image" height="400px" width="auto">
+            </div>
+            <div class="second-content">
+                <h2>About us</h2>
+                <p>We are a result of a group project, filled with ambition and passion to provide quality educational courses.</p>
+            </div>
+        </div>
+
+        <div class="feedback-container">
+            <div class="feedback-form">
+                <h2>Feedback</h2>
+                <form action="submit_feedback.php" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <label for="feedback">Feedback:</label>
+                    <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="feedback-content">
+                <h2>"Your opinion matters"</h2>
+                <p>Your feedback plays a crucial role in the development of this page and CodeLabs as a whole. We will try to the best of our ability to make relevant and appropriate changes. They are the stepping stone to our progress :)</p>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <div class="socials">
+        <a href="https://www.youtube.com/@CodeLabs2024" target="_blank"  class="Youtube"><img src="youtube (1).png"></a>
+        <a href="https://github.com/CodeLabsss?tab=repositories" target="_blank"  class="Github"><img src="github.png"></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=codelabsorg@gmail.com" target="_blank" class="Email"><img src="communication.png"></a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p class="footp">&copy; 2024 CodeLabs</p>
+        </div>
+    </footer>
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navbarContainer = document.querySelector('.navbar-container');
+    
+        hamburgerMenu.addEventListener('click', () => {
+            navbarContainer.classList.toggle('active');
+        });
+    </script>   
+</body>
+</html>

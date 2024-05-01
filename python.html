@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CodeLabs</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Ubuntu:wght@500&display=swap">
+    <style>
+        * {
+            color: #282828;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #959595;
+        }
+
+        ::-webkit-scrollbar-thumb { 
+            background-color: #d0c7d0;
+            border-radius: 6px;
+            border: 0;
+        }
+
+        .cmpname {
+            font-family: "Ubuntu", sans-serif;
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 36px;
+        }
+
+        body {
+            font-family: "Noto Sans", sans-serif;
+            background-color: #EEEEEE;
+            color: #fff; 
+            min-height: 100vh;
+            position: relative;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            background-color: #420e7c;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+        }   
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #FFF7F1;
+            font-weight: bold;
+            transition: top 0.5s ease-in-out;
+            position: relative;
+            padding: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #E26EE5;
+            color: #fff;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+
+        nav ul li a:hover {
+            color: #FFD1E3;
+            top: -3px;
+        }
+
+        nav ul li a:not(:hover) {
+            color: whitesmoke;
+            top: 0;
+        }
+
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .sidebar{
+                display: none;
+            }
+            .content {
+                margin-left: 0 !important; 
+            }
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar-container {
+                display: none;
+                width: 100%;
+            }
+
+            .navbar-container.active {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar-list {       
+                list-style-type: none;
+                padding: 0;
+                margin: 10px 0 0 0;
+            }
+            
+            .navbar-list li {
+                margin-bottom: 10px;
+            }
+
+            .hamburger-menu {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+        }
+
+        .sidebar {
+            background-color: #6b6b6b;
+            color: #fff;
+            width: 250px;
+            height: fit-content;
+            position: fixed;
+            top: 91px;
+            left: 10px;
+            border-radius: 5px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        .sidebar ul li a:hover {
+            color: rgb(168, 224, 168);
+        }
+        .content {
+            max-height: calc(100vh - 60px);
+            overflow-y: auto;
+            margin-left: 270px;
+            padding: 20px;
+            margin-top: 20px;
+            scrollbar-width: none;
+        }
+
+        .next-previous {
+            position: relative;
+            margin: 20px 0;
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .next-previous p {
+            margin-bottom: 10px;
+        }
+
+        .next-previous a {
+            display: block;
+            width: 90px;
+            padding: 10px 0;
+            text-align: center;
+            text-decoration: none;
+            background-color: #420e7c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .next-previous a:hover {
+            background-color: #4d2699;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="cmpname">CodeLabs</a>
+            <button class="hamburger-menu">&#9776;</button>
+            <nav class="navbar-container">
+                <ul class="navbar-list">
+                    <li><a class="home" href="index.html">Home</a></li>
+                    <li><a class="courses" href="course.html">Courses</a></li>
+                    <li><a class="extras" href="#">Problems</a></li>
+                    <li><a class="about" href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="sidebar">
+        <ul>
+            <li><a href="#">Introduction</a></li>
+            <li><a href="#">Data Types and Variables</a></li>
+            <li><a href="#">Conditional Statements and Logical Operators</a></li>
+            <li><a href="#">Loops</a></li>
+            <li><a href="#">Functions</a></li>
+            <li><a href="#">Recursion</a></li>
+            <li><a href="#">Practice Problem</a></li>
+            <li><a href="#">Link 7</a></li>
+            <li><a href="#">Link 8</a></li>
+            <li><a href="#">Link 9</a></li>
+            <li><a href="#">Link 10</a></li>
+            <li><a href="#">Link 11</a></li>
+            <li><a href="#">Link 12</a></li>
+            <li><a href="#">Link 13</a></li>
+            <li><a href="#">Link 14</a></li>
+            <li><a href="#">Link 15</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h3>Introduction: </h3>
+        <p>Python is a high-level programming language known for its simplicity and versatility. Created by Guido van Rossum in 1991, it makes use of a clean syntax that makes coding straightforward. Python utilizes an interpreter rather than a compiler, meaning that code is executed line by line. </p>
+        <h3>Applications: </h3>
+        <p><b>Web Development:</b> Python is widely used in web development to build beautiful and functional websites. It has related libraries and modules like HTTP, XML, JSON, IMAP, POP, FTP, etc. It also has frameworks integrated with it like Django, Flask, Pyramid, and Bottle1.<br><br>
+            <b>Artificial Intelligence and Machine Learning:</b> Many AI and ML models are built using Python. The fundamental cause for this is the availability of many tools and libraries specific to these applications. Some of them include: Pandas for Data Manipulation and Analysis, NumPy and SciPy for mathematical computations, Seaborn and Matplotlib for visualization, Scikit learn, Tensor Flow, Keras for algorithms.<br><br>
+            <b>Game Development:</b>  Python comes with packages like Pygame and Pykyra to build awesome games. It facilitates the development of 3D games with respective libraries. Famous games like Battlefield 2, World of Tanks, Toontown Online, and Civilization are also built using Python.<br><br>
+            <b>Desktop GUI Development:</b>  Its simplicity and platform independence nature make it a good choice for GUI applications. Though Tkinter is the standard library for GUI development, there are other supporting libraries like: Wx Python, Kivy, PyQt, PySide, PyGUI, Delphi, GTK.<br><br>
+            <b>Enterprise/ Business Applications:</b>  Python’s features like scalability, extensibility, and readability make it the best choice for business applications. The following used Python: Odoo: This is an all-in-one business management software for enterprising purposes. Tryton: general-purpose, high level, third-tier business application.<br><br>
+            <b>Software Development:</b>  Python supports the development of software with its libraries and packages. It is used for building, testing, management, and so on. For example Scons help in build control, Buildbot and Apache are used for autonomous and continuous testing.</p>
+            <b>And much more, the list goes on and on. By this, we come to know that Python is extremely versatile and can be used and implemented almost everywhere, now that we know about python, let's start by how to code in it.</b>
+    
+
+    <div class="next-previous">
+        <a class="prev" href="#">Previous</a>
+        <a class="next" href="#">Next</a>
+    </div>
+</div>
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navbarContainer = document.querySelector('.navbar-container');
+    
+        hamburgerMenu.addEventListener('click', () => {
+            navbarContainer.classList.toggle('active');
+        });
+    </script>   
+</body>
+</html>

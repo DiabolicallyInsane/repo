@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problems - CodeLabs</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Ubuntu:wght@500&display=swap">
+    <style>
+        /* Internal CSS */
+        * {
+            color: #282828;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: #959595;
+        }
+
+        ::-webkit-scrollbar-thumb { 
+            background-color: #d0c7d0;
+            border-radius: 6px;
+            border: 0;
+        }
+
+        .cmpname {
+            font-family: "Ubuntu", sans-serif;
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 36px;
+        }
+
+        body {
+            font-family: "Noto Sans", sans-serif;
+            background-color: #EEEEEE;
+            color: #282828; 
+            min-height: 100vh;
+            position: relative;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            background-color: #420e7c;
+            padding: 20px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-container {
+            display: flex;
+            align-items: center;
+        }   
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #FFF7F1;
+            font-weight: bold;
+            transition: top 0.5s ease-in-out;
+            position: relative;
+            padding: 5px;
+        }
+
+        nav ul li a.active {
+            background-color: #E26EE5;
+            color: #fff;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+
+        nav ul li a:hover {
+            color: #FFD1E3;
+            top: -3px;
+        }
+
+        nav ul li a:not(:hover) {
+            color: whitesmoke;
+            top: 0;
+        }
+
+        /* Hamburger Menu */
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .problem-container{
+                width: 90% !important;
+            }
+            .sidebar{
+                display: none;
+            }
+            .content {
+                margin-left: 0 !important; 
+            }
+            .header-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .navbar-container {
+                display: none;
+                width: 100%;
+            }
+
+            .navbar-container.active {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .navbar-list {       
+                list-style-type: none;
+                padding: 0;
+                margin: 10px 0 0 0;
+            }
+            
+            .navbar-list li {
+                margin-bottom: 10px;
+            }
+
+            .hamburger-menu {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #420e7c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: static;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        /* Problem Divs */
+        .problem-container {
+            margin: 0 auto;
+            width: 60%;
+            margin-bottom: 20px;
+            background-color: #fff;
+            color: #726a7e;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .problem-container a {
+            color: #726a7e;
+            text-decoration: none;
+        }
+
+        .problem-container a:hover {
+            color: #a8e0a8;
+        }
+
+        .problem-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .problem-description {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .problem-difficulty {
+            font-size: 14px;
+        }
+
+        .ftp{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="cmpname">CodeLabs</a>
+            <button class="hamburger-menu">&#9776;</button>
+            <nav class="navbar-container">
+                <ul class="navbar-list">
+                    <li><a class="home" href="index.html">Home</a></li>
+                    <li><a class="courses" href="course.html">Courses</a></li>
+                    <li><a class="extras" href="#">Problems</a></li>
+                    <li><a class="about" href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem One</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Easy</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Two</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Medium</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Three</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Hard</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Four</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Easy</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Five</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Medium</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Six</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Hard</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Seven</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Easy</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Eight</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Medium</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Nine</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Hard</p>
+        </div>
+        <div class="problem-container">
+            <h2 class="problem-title"><a href="#">Problem Ten</a></h2>
+            <p class="problem-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed neque ac lectus hendrerit tincidunt.</p>
+            <p class="problem-difficulty">Difficulty: Easy</p>
+        </div>
+    </div>
+
+    <footer>
+        <p class="ftp">&copy; 2024 CodeLabs.</p>
+    </footer>
+
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navbarContainer = document.querySelector('.navbar-container');
+    
+        hamburgerMenu.addEventListener('click', () => {
+            navbarContainer.classList.toggle('active');
+        });
+    </script>   
+</body>
+</html>
